@@ -4,6 +4,7 @@ Case Community Reliability
 # Comando Docker
 docker-compose build
 docker-compose up
+docker-compose down
 docker-compose run --rm app sh -c "flake8"
 docker-compose run --rm app sh -c "django-admin startproject app ."
 
