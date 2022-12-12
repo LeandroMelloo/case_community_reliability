@@ -17,3 +17,4 @@ class TestCalculator(SimpleTestCase):
         """ Test the add function """
         self.assertEqual(calculator_test.sub(5, 2), 3)
 
+
