@@ -8,7 +8,9 @@ class SearchCatApi(APIView):
     def get(self, request):
 
         try:
-            response = requests.get(f"https://api.thecatapi.com/v1/images/search")
+            response = requests.get(
+                "https://api.thecatapi.com/v1/images/search"
+            )
             cat_image_data = response.json()
 
             return Response(
