@@ -11,8 +11,10 @@ class CatBreeds(models.Model):
     origin = models.CharField(max_length=255, verbose_name="Origem")
     temperament = models.TextField(verbose_name="Temperamento")
     description = models.TextField(verbose_name="Descrição")
-    date_joined = models.DateTimeField(auto_now_add=True, editable=False, verbose_name="Data Criação")
-    date_modified = models.DateTimeField(auto_now_add=True, verbose_name="Data Modificação")
+    date_joined = models.DateTimeField(
+        auto_now_add=True, editable=False, verbose_name="Data Criação")
+    date_modified = models.DateTimeField(
+        auto_now_add=True, verbose_name="Data Modificação")
 
     class Meta:
         managed = True

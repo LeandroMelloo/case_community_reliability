@@ -34,4 +34,5 @@ class CatBreedsAdmin(admin.ModelAdmin):
         }),
     )
 
+
 admin.site.register(models.CatBreeds, CatBreedsAdmin)

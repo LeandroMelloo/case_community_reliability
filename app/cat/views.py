@@ -6,12 +6,11 @@ from rest_framework.viewsets import ModelViewSet
 
 from .models import CatBreeds
 from .serializers import CatBreedsSerializer
-        
+
 
 class CatBreedsViewSet(ModelViewSet):
-    
     def list(self, _):
-        url = f"https://api.thecatapi.com/v1/breeds"
+        url = "https://api.thecatapi.com/v1/breeds"
         response = requests.get(url)
         data = response.json()
         serializer_class = CatBreedsSerializer
@@ -29,12 +28,12 @@ class CatBreedsViewSet(ModelViewSet):
             else:
                 error = {"error": "Not found result data"}
                 return Response(error, status=status.HTTP_400_NOT_FOUND)
-            
+
             queryset = CatBreeds.objects.all()
             serializer = serializer_class(queryset, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as error:
             print(error)
             error = {"error": "Error internal server API Cats"}
-            return Response(error, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+            return Response(
+                error, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -1,8 +1,6 @@
 """
 Tests for models.
 """
-from decimal import Decimal
-
 from django.test import TestCase
 
 from cat import models
